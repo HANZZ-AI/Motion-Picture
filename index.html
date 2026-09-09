@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Picture</title>
+    <link rel="icon" type="image/png" href="assets/img/icon/icon.png">
+        <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- Toast Notifikasi -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="icon" id="themeIcon">🌙</span>
+        <span id="themeText">Dark</span>
+    </button>
+
+    <!-- Login Screen -->
+    <div class="login-screen" id="loginScreen">
+        <div class="glass-card login-card">
+            <div class="logo-section">
+                <div class="logo-icon">🎬</div>
+                <h1 class="login-title">Motion Picture</h1>
+                <p class="login-subtitle">Silakan login untuk melanjutkan!</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="usernameInput">Username</label>
+                    <input type="text" class="form-input" id="usernameInput"
+                           placeholder="Masukkan username" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="passwordInput">Password</label>
+                    <div class="password-wrap">
+                        <input type="password" class="form-input" id="passwordInput"
+                               placeholder="Masukkan password" autocomplete="current-password" required>
+                        <button type="button" class="password-toggle" id="passwordToggle"
+                                aria-label="Tampilkan password">👁️</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="loginButton">
+                    <span class="btn-text">🔐 Login</span>
+                    <span class="btn-loader"></span>
+                </button>
+                <div class="login-error" id="loginError"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Protected Dashboard -->
+    <div class="protected-content" id="protectedContent">
+        <!-- Main Container -->
+        <div class="main-container">
+            <div class="glass-card">
+                <h1 class="dashboard-title">Motion Picture</h1>
+                <div class="logo-section">
+                <div class="logo-icon">🎬</div>
+                <h1 class="logo-title">Alight Motion <span>Premium</span></h1>
+                <p class="logo-subtitle">GENERATOR</p>
+            </div>
+
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step-dot active" id="dot1"></div>
+                <div class="step-line" id="line1"></div>
+                <div class="step-dot" id="dot2"></div>
+                <div class="step-line" id="line2"></div>
+                <div class="step-dot" id="dot3"></div>
+            </div>
+
+            <!-- STEP 1: Input Email -->
+            <div class="step-section active" id="step1">
+                <span class="info-badge">📧 LANGKAH 1</span>
+                <div class="form-group">
+                    <label class="form-label" for="emailInput">Masukkan Email</label>
+                    <input type="email" class="form-input" id="emailInput"
+                    placeholder="contoh: example123@gmail.com"
+                    autocomplete="email" required>
+                </div>
+                <button class="btn btn-primary" id="btnMagicLink">
+                    <span class="btn-text">🔗 Kirim Magic Link</span>
+                    <span class="btn-loader"></span>
+                </button>
+                <p class="hint-text">Created By HANZZ</p>
+            </div>
+
+            <!-- STEP 2: Input Magic Link -->
+            <div class="step-section" id="step2">
+                <span class="info-badge">✨ LANGKAH 2</span>
+                <div class="form-group">
+                    <label class="form-label" for="magicLinkInput">Masukkan Magic Link</label>
+                    <input type="text" class="form-input" id="magicLinkInput"
+                    placeholder="contoh: https://alight-creative.firebaseapp.com/xxxxx"
+                    required>
+                </div>
+                <button class="btn btn-primary" id="btnApplyPremium">
+                    <span class="btn-text">⚡ Aktifkan Premium</span>
+                    <span class="btn-loader"></span>
+                </button>
+                <p class="hint-text">Cek email kamu di bagian utama & spam untuk mendapatkan magic link!</p>
+                <button class="btn btn-primary" id="btnBackStep1"
+                style="margin-top:10px; background: transparent; border:1px solid var(--glass-border); box-shadow:none; font-size:13px; padding:10px;">
+                ← Kembali ke Email
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Popup Sukses -->
+<div class="modal-overlay" id="successModal">
+    <div class="modal-popup">
+        <div class="checkmark-wrapper">
+            <div class="checkmark-circle"></div>
+            <div class="checkmark-stem"></div>
+            <div class="checkmark-kick"></div>
+        </div>
+        <h2 class="modal-title">Alight Motion Premium Active ✅</h2>
+        <p class="modal-message">
+            Silahkan login dan nikmati <span class="heart">❤</span>
+        </p>
+        <div class="modal-credit">
+            Creator: <span class="highlight">HANZZ</span><br>
+            TikTok: <span class="highlight">@hanzzxbug</span>
+        </div>
+        <button class="modal-close-btn" id="closeModalBtn">🎉 OKE</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
